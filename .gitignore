@@ -156,3 +156,5 @@ app/assets/images/*
 # rubocup設定を無視
 .rubocup.yml
 
+# 投稿された画像をリポジトリに含めない
+public/uploads/*
