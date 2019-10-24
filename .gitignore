@@ -148,9 +148,6 @@ yarn-debug.log*
 
 # End of https://www.gitignore.io/api/rails
 # ------------
-app/assets/fonts/*
-app/assets/images/*
-# ------------
 # vscode設定を無視
 .vscode/
 # rubocup設定を無視
