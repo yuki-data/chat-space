@@ -1,0 +1,195 @@
+html {
+  @include hide_scrollbar;
+}
+
+.alert-message {
+  background-color: $violet;
+  width: 100vw;
+  text-align: center;
+  color: $white;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  .sidebar {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    &-header {
+      flex: 0 0 $header_height;
+      background-color: #253141;
+      padding: 0 $sidebar_padding_length;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__current-username {
+          color: $white;
+          font: {
+            size: 16px;
+            weight: bold;
+          }
+        }
+        &__menu {
+          display: flex;
+          li {
+            margin-left: 0.3rem;
+            a {
+              @include link_decoration_disabled($white);
+            }
+          }
+        }
+      }
+    }
+
+    .grouplist {
+      flex-grow: 1;
+      background-color: #2f3e51;
+      padding: 0 $sidebar_padding_length;
+      overflow: scroll;
+      @include hide_scrollbar;
+      a {
+        @include link_decoration_disabled($white);
+        .group {
+          padding: 20px 0 40px 0;
+          &__name {
+            margin-bottom: 5px;
+            font: {
+              size: 15px;
+              weight: bold;
+            }
+          }
+          &__message {
+            font: {
+              size: 11px;
+              weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    &-header {
+      flex: 0 0 $header_height;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 $chat_block_padding_length;
+      &__left {
+        padding-top: 35px;
+        &__group-name {
+          font-size: 20px;
+          color: #333333;
+          margin-bottom: 15px;
+        }
+        &__member-list {
+          display: flex;
+          font-size: 12px;
+          color: $dimgrey;
+          &__member {
+            &:not(:first-of-type) {
+              margin-left: 0.3rem;
+            }
+          }
+        }
+      }
+      a {
+        @include link_decoration_disabled($violet);
+        .main-header__btn-edit-group {
+          height: 40px;
+          line-height: 40px;
+          padding: 0 20px;
+          border: 1px solid $violet;
+        }
+      }
+    }
+    .chat {
+      flex-grow: 1;
+      background-color: #fafafa;
+      border: 1px solid #eeeeee;
+      padding: 0 $chat_block_padding_length;
+      overflow: scroll;
+      @include hide_scrollbar;
+      &__message {
+        padding-top: 46px;
+        &__info {
+          margin-bottom: 10px;
+          display: flex;
+          &__username {
+            color: $darkblue;
+            font: {
+              size: 16px;
+              weight: bold;
+            }
+          }
+          &__date {
+            font-size: 12px;
+            color: $dimgrey;
+            margin-left: 10px;
+          }
+        }
+        &__text {
+          font-size: 14px;
+          color: $darkblue;
+        }
+      }
+    }
+    .main-bottom {
+      flex: 0 0 90px;
+      padding: 0 $chat_block_padding_length;
+      background-color: #ddd;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .chat-form {
+        display: flex;
+        &__content {
+          flex-grow: 1;
+          position: relative;
+          padding: 0 40px 0 10px;
+          background-color: $white;
+          &:focus-within {
+            box-shadow: 0 0 0 3px $violet;
+          }
+          &__message {
+            width: 100%;
+            height: 50px;
+            @include reset_border_width;
+          }
+          .upload-label {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 1.3rem;
+            line-height: 50px;
+            i {
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        &__btn-submit {
+          flex: 0 0 100px;
+          height: 50px;
+          margin-left: 15px;
+          color: $white;
+          background-color: $violet;
+          @include reset_border_width;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

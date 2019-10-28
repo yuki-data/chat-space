@@ -151,7 +151,7 @@ yarn-debug.log*
 # vscode設定を無視
 .vscode/
 # rubocup設定を無視
-.rubocup.yml
+.rubocop.yml
 
 # 投稿された画像をリポジトリに含めない
 public/uploads/*
