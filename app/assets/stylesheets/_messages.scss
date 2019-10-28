@@ -33,10 +33,16 @@ $white: #ffffff;
       justify-content: center;
 
       .sidebar-header__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         .sidebar-header__content__current-username {
           color: $white;
         }
         .sidebar-header__content__menu {
+          display: flex;
+
           li {
             a {
               @include link_decoration_disabled($white);
