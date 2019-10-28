@@ -1,6 +1,11 @@
 $violet: #38aef0;
 $white: #ffffff;
 
+@mixin link_decoration_disabled($color) {
+  color: $color;
+  text-decoration: none;
+}
+
 .alert-message {
   background-color: $violet;
   width: 100vw;
@@ -29,8 +34,7 @@ $white: #ffffff;
         .sidebar-header__content__menu {
           li {
             a {
-              color: $white;
-              text-decoration: none;
+              @include link_decoration_disabled($white);
             }
           }
         }
@@ -42,8 +46,7 @@ $white: #ffffff;
       background-color: #2f3e51;
 
       a {
-        color: $white;
-        text-decoration: none;
+        @include link_decoration_disabled($white);
       }
     }
   }
