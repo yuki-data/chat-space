@@ -21,10 +21,28 @@ $white: #ffffff;
     .sidebar-header {
       flex: 0 0 100px;
       background-color: #253141;
+
+      .sidebar-header__content {
+        .sidebar-header__content__current-username {
+          color: $white;
+        }
+        .sidebar-header__content__menu {
+          li {
+            a {
+              color: $white;
+            }
+          }
+        }
+      }
     }
+
     .grouplist {
       flex-grow: 1;
       background-color: #2f3e51;
+
+      a {
+        color: $white;
+      }
     }
   }
 
