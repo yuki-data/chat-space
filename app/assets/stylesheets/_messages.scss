@@ -124,6 +124,14 @@ $white: #ffffff;
       background-color: #fafafa;
       border: 1px solid #eeeeee;
       padding: 0 40px;
+      .chat__message {
+        padding-top: 46px;
+        .chat__message__info {
+          margin-bottom: 10px;
+        }
+        .chat__message__text {
+        }
+      }
     }
     .main-bottom {
       flex: 0 0 90px;
