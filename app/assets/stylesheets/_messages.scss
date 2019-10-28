@@ -39,6 +39,10 @@ $white: #ffffff;
 
         .sidebar-header__content__current-username {
           color: $white;
+          font: {
+            size: 16px;
+            weight: bold;
+          }
         }
         .sidebar-header__content__menu {
           display: flex;
