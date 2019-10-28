@@ -177,6 +177,11 @@ $darkblue: #434a54;
 
       .chat-form {
         display: flex;
+        .chat-form__content {
+          flex-grow: 1;
+          .chat-form__content__message {
+            width: 100%;
+          }
       }
     }
   }
