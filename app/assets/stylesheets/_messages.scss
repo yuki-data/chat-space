@@ -8,9 +8,15 @@
 
 .wrapper {
   display: flex;
+
   .sidebar {
     flex: 0 0 300px;
+
+    display: flex;
+    flex-direction: column;
+
   }
+
   .main {
     flex-grow: 1;
   }
