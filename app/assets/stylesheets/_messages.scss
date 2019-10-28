@@ -28,6 +28,10 @@ $white: #ffffff;
       background-color: #253141;
       padding: 0 20px;
 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
       .sidebar-header__content {
         .sidebar-header__content__current-username {
           color: $white;
