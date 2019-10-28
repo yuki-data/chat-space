@@ -187,6 +187,12 @@ $darkblue: #434a54;
             position: absolute;
             top: 0;
             right: 0;
+        .chat-form__btn-submit {
+          flex: 0 0 100px;
+          height: 50px;
+          margin-left: 15px;
+          color: $white;
+          background-color: $violet;
           }
         }
       }
