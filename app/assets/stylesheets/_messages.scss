@@ -20,6 +20,10 @@ $darkblue: #434a54;
   border-width: 0;
 }
 
+html {
+  @include hide_scrollbar;
+}
+
 .alert-message {
   background-color: $violet;
   width: 100vw;
