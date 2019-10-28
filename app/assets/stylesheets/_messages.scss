@@ -128,8 +128,21 @@ $white: #ffffff;
         padding-top: 46px;
         .chat__message__info {
           margin-bottom: 10px;
+          .chat__message__info__username {
+            color: #434a54;
+            font: {
+              size: 16px;
+              weight: bold;
+            }
+          }
+          .chat__message__info__date {
+            font-size: 12px;
+            color: #999999;
+          }
         }
         .chat__message__text {
+          font-size: 14px;
+          color: #434a54;
         }
       }
     }
