@@ -170,6 +170,11 @@ $darkblue: #434a54;
       flex: 0 0 90px;
       padding: 0 40px;
       background-color: #ddd;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
     }
   }
 }
