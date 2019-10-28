@@ -16,6 +16,10 @@ $darkblue: #434a54;
   }
 }
 
+@mixin reset_border_width {
+  border-width: 0;
+}
+
 .alert-message {
   background-color: $violet;
   width: 100vw;
@@ -182,6 +186,7 @@ $darkblue: #434a54;
           position: relative;
           .chat-form__content__message {
             width: 100%;
+            @include reset_border_width;
           }
           .upload-label {
             position: absolute;
@@ -193,6 +198,7 @@ $darkblue: #434a54;
           margin-left: 15px;
           color: $white;
           background-color: $violet;
+          @include reset_border_width;
           }
         }
       }
