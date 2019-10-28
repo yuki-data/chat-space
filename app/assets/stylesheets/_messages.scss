@@ -2,6 +2,7 @@ $violet: #38aef0;
 $white: #ffffff;
 $dimgrey: #999999;
 $darkblue: #434a54;
+$header_height: 100px;
 
 @mixin link_decoration_disabled($color) {
   color: $color;
@@ -43,7 +44,7 @@ html {
     flex-direction: column;
 
     .sidebar-header {
-      flex: 0 0 100px;
+      flex: 0 0 $header_height;
       background-color: #253141;
       padding: 0 20px;
 
@@ -109,7 +110,7 @@ html {
     display: flex;
     flex-direction: column;
     .main-header {
-      flex: 0 0 100px;
+      flex: 0 0 $header_height;
       display: flex;
       justify-content: space-between;
       align-items: center;
