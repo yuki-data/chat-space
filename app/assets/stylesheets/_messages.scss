@@ -175,6 +175,9 @@ $darkblue: #434a54;
       flex-direction: column;
       justify-content: center;
 
+      .chat-form {
+        display: flex;
+      }
     }
   }
 }
