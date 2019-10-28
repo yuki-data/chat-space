@@ -109,6 +109,15 @@ $white: #ffffff;
           color: #999999;
         }
       }
+      a {
+        @include link_decoration_disabled($violet);
+        .main-header__btn-edit-group {
+          height: 40px;
+          line-height: 40px;
+          padding: 0 20px;
+          border: 1px solid $violet;
+        }
+      }
     }
     .chat {
       flex-grow: 1;
