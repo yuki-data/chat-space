@@ -1,5 +1,7 @@
 $violet: #38aef0;
 $white: #ffffff;
+$dimgrey: #999999;
+$darkblue: #434a54;
 
 @mixin link_decoration_disabled($color) {
   color: $color;
@@ -106,7 +108,7 @@ $white: #ffffff;
         .main-header__left__member-list {
           display: flex;
           font-size: 12px;
-          color: #999999;
+          color: $dimgrey;
         }
       }
       a {
@@ -129,7 +131,7 @@ $white: #ffffff;
         .chat__message__info {
           margin-bottom: 10px;
           .chat__message__info__username {
-            color: #434a54;
+            color: $darkblue;
             font: {
               size: 16px;
               weight: bold;
@@ -137,12 +139,12 @@ $white: #ffffff;
           }
           .chat__message__info__date {
             font-size: 12px;
-            color: #999999;
+            color: $dimgrey;
           }
         }
         .chat__message__text {
           font-size: 14px;
-          color: #434a54;
+          color: $darkblue;
         }
       }
     }
