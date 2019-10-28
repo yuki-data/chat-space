@@ -184,6 +184,8 @@ $darkblue: #434a54;
         .chat-form__content {
           flex-grow: 1;
           position: relative;
+          padding: 0 40px 0 10px;
+          background-color: $white;
           .chat-form__content__message {
             width: 100%;
             height: 50px;
