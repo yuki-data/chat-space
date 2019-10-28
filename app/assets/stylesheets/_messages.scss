@@ -8,4 +8,7 @@
 
 .wrapper {
   display: flex;
+  .sidebar {
+    flex: 0 0 300px;
+  }
 }
