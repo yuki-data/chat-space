@@ -4,6 +4,7 @@ $dimgrey: #999999;
 $darkblue: #434a54;
 $header_height: 100px;
 $sidebar_padding_length: 20px;
+$chat_block_padding_length: 40px;
 
 @mixin link_decoration_disabled($color) {
   color: $color;
@@ -115,7 +116,7 @@ html {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 40px;
+      padding: 0 $chat_block_padding_length;
 
       .main-header__left {
         padding-top: 35px;
@@ -149,7 +150,7 @@ html {
       flex-grow: 1;
       background-color: #fafafa;
       border: 1px solid #eeeeee;
-      padding: 0 40px;
+      padding: 0 $chat_block_padding_length;
       overflow: scroll;
       @include hide_scrollbar;
       .chat__message {
@@ -178,7 +179,7 @@ html {
     }
     .main-bottom {
       flex: 0 0 90px;
-      padding: 0 40px;
+      padding: 0 $chat_block_padding_length;
       background-color: #ddd;
 
       display: flex;
