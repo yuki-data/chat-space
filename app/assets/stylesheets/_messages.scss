@@ -48,6 +48,7 @@ $white: #ffffff;
           display: flex;
 
           li {
+            margin-left: 0.3rem;
             a {
               @include link_decoration_disabled($white);
             }
