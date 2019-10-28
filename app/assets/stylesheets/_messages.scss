@@ -16,25 +16,25 @@ html {
     flex: 0 0 300px;
     display: flex;
     flex-direction: column;
-    .sidebar-header {
+    &-header {
       flex: 0 0 $header_height;
       background-color: #253141;
       padding: 0 $sidebar_padding_length;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      .sidebar-header__content {
+      &__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .sidebar-header__content__current-username {
+        &__current-username {
           color: $white;
           font: {
             size: 16px;
             weight: bold;
           }
         }
-        .sidebar-header__content__menu {
+        &__menu {
           display: flex;
           li {
             margin-left: 0.3rem;
@@ -56,14 +56,14 @@ html {
         @include link_decoration_disabled($white);
         .group {
           padding: 20px 0 40px 0;
-          .group__name {
+          &__name {
             margin-bottom: 5px;
             font: {
               size: 15px;
               weight: bold;
             }
           }
-          .group__message {
+          &__message {
             font: {
               size: 11px;
               weight: bold;
@@ -78,24 +78,24 @@ html {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    .main-header {
+    &-header {
       flex: 0 0 $header_height;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 $chat_block_padding_length;
-      .main-header__left {
+      &__left {
         padding-top: 35px;
-        .main-header__left__group-name {
+        &__group-name {
           font-size: 20px;
           color: #333333;
           margin-bottom: 15px;
         }
-        .main-header__left__member-list {
+        &__member-list {
           display: flex;
           font-size: 12px;
           color: $dimgrey;
-          .main-header__left__member-list__member {
+          &__member {
             &:not(:first-of-type) {
               margin-left: 0.3rem;
             }
@@ -119,25 +119,25 @@ html {
       padding: 0 $chat_block_padding_length;
       overflow: scroll;
       @include hide_scrollbar;
-      .chat__message {
+      &__message {
         padding-top: 46px;
-        .chat__message__info {
+        &__info {
           margin-bottom: 10px;
           display: flex;
-          .chat__message__info__username {
+          &__username {
             color: $darkblue;
             font: {
               size: 16px;
               weight: bold;
             }
           }
-          .chat__message__info__date {
+          &__date {
             font-size: 12px;
             color: $dimgrey;
             margin-left: 10px;
           }
         }
-        .chat__message__text {
+        &__text {
           font-size: 14px;
           color: $darkblue;
         }
@@ -152,7 +152,7 @@ html {
       justify-content: center;
       .chat-form {
         display: flex;
-        .chat-form__content {
+        &__content {
           flex-grow: 1;
           position: relative;
           padding: 0 40px 0 10px;
@@ -160,7 +160,7 @@ html {
           &:focus-within {
             box-shadow: 0 0 0 3px $violet;
           }
-          .chat-form__content__message {
+          &__message {
             width: 100%;
             height: 50px;
             @include reset_border_width;
@@ -178,7 +178,7 @@ html {
             }
           }
         }
-        .chat-form__btn-submit {
+        &__btn-submit {
           flex: 0 0 100px;
           height: 50px;
           margin-left: 15px;
