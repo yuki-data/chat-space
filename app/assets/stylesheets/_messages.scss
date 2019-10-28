@@ -197,6 +197,11 @@ $darkblue: #434a54;
             right: 10px;
             font-size: 1.3rem;
             line-height: 50px;
+            i {
+              &:hover {
+                cursor: pointer;
+              }
+            }
           }
         }
         .chat-form__btn-submit {
@@ -206,6 +211,8 @@ $darkblue: #434a54;
           color: $white;
           background-color: $violet;
           @include reset_border_width;
+          &:hover {
+            cursor: pointer;
           }
         }
       }
