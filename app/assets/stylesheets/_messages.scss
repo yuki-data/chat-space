@@ -1,10 +1,4 @@
-$violet: #38aef0;
-$white: #ffffff;
-$dimgrey: #999999;
-$darkblue: #434a54;
-$header_height: 100px;
-$sidebar_padding_length: 20px;
-$chat_block_padding_length: 40px;
+@import "config/variable";
 
 @mixin link_decoration_disabled($color) {
   color: $color;
