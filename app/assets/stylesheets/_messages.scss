@@ -3,6 +3,7 @@ $white: #ffffff;
 $dimgrey: #999999;
 $darkblue: #434a54;
 $header_height: 100px;
+$sidebar_padding_length: 20px;
 
 @mixin link_decoration_disabled($color) {
   color: $color;
@@ -46,7 +47,7 @@ html {
     .sidebar-header {
       flex: 0 0 $header_height;
       background-color: #253141;
-      padding: 0 20px;
+      padding: 0 $sidebar_padding_length;
 
       display: flex;
       flex-direction: column;
@@ -80,7 +81,7 @@ html {
     .grouplist {
       flex-grow: 1;
       background-color: #2f3e51;
-      padding: 0 20px;
+      padding: 0 $sidebar_padding_length;
       overflow: scroll;
       @include hide_scrollbar;
       a {
