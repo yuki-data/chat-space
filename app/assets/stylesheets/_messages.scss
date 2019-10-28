@@ -26,6 +26,7 @@ $white: #ffffff;
     .sidebar-header {
       flex: 0 0 100px;
       background-color: #253141;
+      padding: 0 20px;
 
       .sidebar-header__content {
         .sidebar-header__content__current-username {
@@ -44,6 +45,7 @@ $white: #ffffff;
     .grouplist {
       flex-grow: 1;
       background-color: #2f3e51;
+      padding: 0 20px;
 
       a {
         @include link_decoration_disabled($white);
