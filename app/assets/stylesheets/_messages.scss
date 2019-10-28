@@ -30,6 +30,7 @@ $white: #ffffff;
           li {
             a {
               color: $white;
+              text-decoration: none;
             }
           }
         }
@@ -42,6 +43,7 @@ $white: #ffffff;
 
       a {
         color: $white;
+        text-decoration: none;
       }
     }
   }
