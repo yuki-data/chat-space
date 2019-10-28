@@ -194,7 +194,11 @@ $darkblue: #434a54;
           .upload-label {
             position: absolute;
             top: 0;
-            right: 0;
+            right: 10px;
+            font-size: 1.3rem;
+            line-height: 50px;
+          }
+        }
         .chat-form__btn-submit {
           flex: 0 0 100px;
           height: 50px;
