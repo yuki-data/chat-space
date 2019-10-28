@@ -64,6 +64,9 @@ $white: #ffffff;
 
       a {
         @include link_decoration_disabled($white);
+        .group {
+          padding: 20px 0 40px 0;
+        }
       }
     }
   }
