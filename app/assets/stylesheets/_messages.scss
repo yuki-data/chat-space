@@ -91,6 +91,15 @@ $white: #ffffff;
     flex-direction: column;
     .main-header {
       flex: 0 0 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .main-header__left {
+        .main-header__left__member-list {
+          display: flex;
+        }
+      }
     }
     .chat {
       flex-grow: 1;
