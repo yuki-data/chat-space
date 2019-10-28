@@ -118,6 +118,11 @@ $darkblue: #434a54;
           display: flex;
           font-size: 12px;
           color: $dimgrey;
+          .main-header__left__member-list__member {
+            &:not(:first-of-type) {
+              margin-left: 0.3rem;
+            }
+          }
         }
       }
       a {
