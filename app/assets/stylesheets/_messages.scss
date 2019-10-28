@@ -130,6 +130,7 @@ $darkblue: #434a54;
         padding-top: 46px;
         .chat__message__info {
           margin-bottom: 10px;
+          display: flex;
           .chat__message__info__username {
             color: $darkblue;
             font: {
