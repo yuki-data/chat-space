@@ -97,8 +97,14 @@ $white: #ffffff;
       padding: 0 40px;
 
       .main-header__left {
+        .main-header__left__group-name {
+          font-size: 20px;
+          color: #333333;
+        }
         .main-header__left__member-list {
           display: flex;
+          font-size: 12px;
+          color: #999999;
         }
       }
     }
