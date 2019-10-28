@@ -186,6 +186,9 @@ $darkblue: #434a54;
           position: relative;
           padding: 0 40px 0 10px;
           background-color: $white;
+          &:focus-within {
+            box-shadow: 0 0 0 3px $violet;
+          }
           .chat-form__content__message {
             width: 100%;
             height: 50px;
