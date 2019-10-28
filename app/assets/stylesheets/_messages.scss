@@ -8,6 +8,14 @@ $darkblue: #434a54;
   text-decoration: none;
 }
 
+@mixin hide_scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .alert-message {
   background-color: $violet;
   width: 100vw;
@@ -65,6 +73,7 @@ $darkblue: #434a54;
       background-color: #2f3e51;
       padding: 0 20px;
       overflow: scroll;
+      @include hide_scrollbar;
       a {
         @include link_decoration_disabled($white);
         .group {
@@ -127,6 +136,7 @@ $darkblue: #434a54;
       border: 1px solid #eeeeee;
       padding: 0 40px;
       overflow: scroll;
+      @include hide_scrollbar;
       .chat__message {
         padding-top: 46px;
         .chat__message__info {
