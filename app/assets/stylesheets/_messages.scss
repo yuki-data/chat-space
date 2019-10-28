@@ -66,6 +66,19 @@ $white: #ffffff;
         @include link_decoration_disabled($white);
         .group {
           padding: 20px 0 40px 0;
+          .group__name {
+            margin-bottom: 5px;
+            font: {
+              size: 15px;
+              weight: bold;
+            }
+          }
+          .group__message {
+            font: {
+              size: 11px;
+              weight: bold;
+            }
+          }
         }
       }
     }
