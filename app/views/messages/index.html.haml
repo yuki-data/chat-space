@@ -3,7 +3,8 @@
   .sidebar
     .sidebar-header
       .sidebar-header__content
-        %p.sidebar-header__content__current-username 山田
+        %p.sidebar-header__content__current-username
+          = current_user.name
         %ul.sidebar-header__content__menu
           %li.sidebar-header__content__menu__btn-create-group
             = link_to "#" do
