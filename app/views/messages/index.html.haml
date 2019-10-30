@@ -1,29 +1,5 @@
 .wrapper
-  .sidebar
-    .sidebar-header
-      .sidebar-header__content
-        %p.sidebar-header__content__current-username
-          = current_user.name
-        %ul.sidebar-header__content__menu
-          %li.sidebar-header__content__menu__btn-create-group
-            = link_to "#" do
-              = fa_icon 'edit'
-          %li.sidebar-header__content__menu__btn-edit-account
-            = link_to edit_user_path(current_user) do
-              = fa_icon 'cog'
-    .grouplist
-      = link_to "#" do
-        .group
-          %p.group__name グループA
-          %p.group__message こんにちは
-      = link_to "#" do
-        .group
-          %p.group__name グループB
-          %p.group__message 画像が投稿されました
-      = link_to "#" do
-        .group
-          %p.group__name グループC
-          %p.group__message まだメッセージがありません
+  = render partial: "shared/sidebar"
   .main
     .main-header
       .main-header__left

@@ -29,6 +29,7 @@
             margin-left: 0.3rem;
             a {
               @include link_decoration_disabled($white);
+              font-size: 16px;
             }
           }
         }
