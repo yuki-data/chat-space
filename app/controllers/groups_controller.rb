@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
   end
   def create
     Group.create(group_params)
+    user_ids = params.require(:group)[:user_ids]
   end
   def edit
   end
