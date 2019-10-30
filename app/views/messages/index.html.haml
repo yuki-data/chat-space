@@ -12,18 +12,11 @@
             = link_to edit_user_path(current_user) do
               = fa_icon 'cog'
     .grouplist
-      = link_to "#" do
-        .group
-          %p.group__name グループA
-          %p.group__message こんにちは
-      = link_to "#" do
-        .group
-          %p.group__name グループB
-          %p.group__message 画像が投稿されました
-      = link_to "#" do
-        .group
-          %p.group__name グループC
-          %p.group__message まだメッセージがありません
+      - @groups.each do |group|
+        = link_to "#" do
+          .group
+            %p.group__name=group.name
+            %p.group__message こんにちは
   .main
     .main-header
       .main-header__left
