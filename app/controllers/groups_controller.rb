@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
         GroupUser.create(group_id: @group.id, user_id: i.to_i) unless i.empty?
       end
 
-      redirect_to root_path
+      redirect_to root_path, notice: "グループを作成しました"
     else
       render :new
     end
