@@ -1,13 +1,20 @@
 class GroupsController < ApplicationController
   def new
     @group = Group.new
+    @group.users << current_user
   end
 
   def create
-    group = Group.create(group_params)
-    user_ids = params.require(:group)[:user_ids]
-    user_ids.each do |i|
-      GroupUser.create(group_id: group.id, user_id: i.to_i) unless i.empty?
+    @group = Group.create(group_params)
+    if @group.errors.empty?
+      user_ids = params.require(:group)[:user_ids]
+      user_ids.each do |i|
+        GroupUser.create(group_id: @group.id, user_id: i.to_i) unless i.empty?
+      end
+
+      redirect_to root_path
+    else
+      render :new
     end
   end
 
