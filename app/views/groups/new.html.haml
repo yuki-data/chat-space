@@ -1,6 +1,6 @@
 .chat-group-form
   %h1 新規チャットグループ
-  %form
+  = form_for(@group) do |f|
     .chat-group-form__errors
       %h2
         1件のエラーが発生しました。
