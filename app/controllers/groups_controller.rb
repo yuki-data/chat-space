@@ -3,8 +3,11 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
   def create
-    Group.create(group_params)
+    group = Group.create(group_params)
     user_ids = params.require(:group)[:user_ids]
+    user_ids.each do |i|
+      GroupUser.create(group_id: group.id, user_id: i.to_i) unless i.empty?
+    end
   end
   def edit
   end
