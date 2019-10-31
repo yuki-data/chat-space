@@ -23,4 +23,5 @@
           = f.text_field :content, class: "chat-form__content__message", placeholder: "type a message"
           = f.label :image, class: "chat-form__content__img-upload" do
             = fa_icon "picture-o"
+            = f.file_field :image, class: "chat-form__content__img-upload__input"
         %input.chat-form__btn-submit{type: "submit", value: "Send"}
