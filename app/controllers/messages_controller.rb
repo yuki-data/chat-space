@@ -6,7 +6,8 @@ class MessagesController < ApplicationController
   end
 
   def create
-    Message.create(message_params)
+    message = Message.create(message_params)
+    render :index if message.errors.empty?
   end
 
   def message_params
