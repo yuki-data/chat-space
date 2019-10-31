@@ -166,6 +166,9 @@
                 cursor: pointer;
               }
             }
+            &__input {
+              display: none;
+            }
           }
         }
         &__btn-submit {
