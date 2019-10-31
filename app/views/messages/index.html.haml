@@ -21,6 +21,6 @@
       = form_for([@group, @message], html: {class: "chat-form"}) do |f|
         .chat-form__content
           = f.text_field :content, class: "chat-form__content__message", placeholder: "type a message"
-          %label.chat-form__content__img-upload{for: "upload-icon"}
+          = f.label :image, class: "chat-form__content__img-upload" do
             = fa_icon "picture-o"
         %input.chat-form__btn-submit{type: "submit", value: "Send"}
