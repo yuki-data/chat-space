@@ -11,21 +11,12 @@
       = link_to edit_group_path(@group.id) do
         .main-header__btn-edit-group Edit
     .chat
-      .chat__message
-        .chat__message__info
-          .chat__message__info__username 山田
-          .chat__message__info__date 2019/10/22(Tue) 21:30:06
-        .chat__message__text はじめまして
-      .chat__message
-        .chat__message__info
-          .chat__message__info__username 田中
-          .chat__message__info__date 2019/10/22(Tue) 21:30:06
-        .chat__message__text こんにちは
-      .chat__message
-        .chat__message__info
-          .chat__message__info__username 鈴木
-          .chat__message__info__date 2019/10/22(Tue) 21:30:06
-        .chat__message__text よろしくお願いします
+      - @group.messages.each do |message|
+        .chat__message
+          .chat__message__info
+            .chat__message__info__username=message.user.name
+            .chat__message__info__date=message.updated_at
+          .chat__message__text=message.content
     .main-bottom
       = form_for([@group, @message], html: {class: "chat-form"}) do |f|
         .chat-form__content
