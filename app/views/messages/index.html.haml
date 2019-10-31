@@ -11,7 +11,7 @@
       = link_to edit_group_path(@group.id) do
         .main-header__btn-edit-group Edit
     .chat
-      - @group.messages.each do |message|
+      - @messages.each do |message|
         .chat__message
           .chat__message__info
             .chat__message__info__username=message.user.name
