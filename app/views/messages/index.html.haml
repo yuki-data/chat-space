@@ -22,5 +22,5 @@
         .chat-form__content
           = f.text_field :content, class: "chat-form__content__message", placeholder: "type a message"
           %label.upload-label{for: "upload-icon"}
-            %i.fa.fa-picture-o
+            = fa_icon "picture-o"
         %input.chat-form__btn-submit{type: "submit", value: "Send"}
