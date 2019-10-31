@@ -6,5 +6,10 @@ class MessagesController < ApplicationController
   end
 
   def create
+    Message.create(message_params)
+  end
+
+  def message_params
+    params.require(:message).permit(:content).merge(group_id: params[:group_id], user_id: current_user.id)
   end
 end
