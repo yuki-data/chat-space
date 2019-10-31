@@ -17,6 +17,7 @@
             .chat__message__info__username=message.user.name
             .chat__message__info__date=message.updated_at
           .chat__message__text=message.content
+          = image_tag message.image
     .main-bottom
       = form_for([@group, @message], html: {class: "chat-form"}) do |f|
         .chat-form__content
