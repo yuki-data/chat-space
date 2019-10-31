@@ -6,9 +6,8 @@
         %p.main-header__left__group-name=@group.name
         %ul.main-header__left__member-list
           Member：
-          %li.main-header__left__member-list__member 山田
-          %li.main-header__left__member-list__member 田中
-          %li.main-header__left__member-list__member 鈴木
+          - @group.users.each do |user|
+            %li.main-header__left__member-list__member=user.name
       = link_to "#" do
         .main-header__btn-edit-group Edit
     .chat
