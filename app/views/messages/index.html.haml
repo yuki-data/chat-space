@@ -8,7 +8,7 @@
           Member：
           - @group.users.each do |user|
             %li.main-header__left__member-list__member=user.name
-      = link_to "#" do
+      = link_to edit_group_path(@group.id) do
         .main-header__btn-edit-group Edit
     .chat
       .chat__message
