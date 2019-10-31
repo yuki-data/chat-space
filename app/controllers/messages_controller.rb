@@ -7,9 +7,10 @@ class MessagesController < ApplicationController
   def create
     message = Message.create(message_params)
     if message.errors.empty?
-      render :index
+      redirect_to group_messages_path(params[:group_id]), notice: "メッセージを送信しました"
     else
-      redirect_to group_messages_path(params[:group_id]), alert: "メッセージを入力してください"
+      flash[:alert] = "メッセージを入力してください"
+      render :index
     end
   end
 
