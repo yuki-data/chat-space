@@ -27,7 +27,7 @@
           .chat__message__info__date 2019/10/22(Tue) 21:30:06
         .chat__message__text よろしくお願いします
     .main-bottom
-      %form.chat-form
+      = form_for([@group, @message], html: {class: "chat-form"}) do |f|
         .chat-form__content
           %input.chat-form__content__message{type: "text", placeholder: "type a message"}
           %label.upload-label{for: "upload-icon"}
