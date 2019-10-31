@@ -3,34 +3,20 @@
   .main
     .main-header
       .main-header__left
-        %p.main-header__left__group-name グループA
+        %p.main-header__left__group-name=@group.name
         %ul.main-header__left__member-list
           Member：
-          %li.main-header__left__member-list__member 山田
-          %li.main-header__left__member-list__member 田中
-          %li.main-header__left__member-list__member 鈴木
-      = link_to "#" do
+          - @group.users.each do |user|
+            %li.main-header__left__member-list__member=user.name
+      = link_to edit_group_path(@group.id) do
         .main-header__btn-edit-group Edit
     .chat
-      .chat__message
-        .chat__message__info
-          .chat__message__info__username 山田
-          .chat__message__info__date 2019/10/22(Tue) 21:30:06
-        .chat__message__text はじめまして
-      .chat__message
-        .chat__message__info
-          .chat__message__info__username 田中
-          .chat__message__info__date 2019/10/22(Tue) 21:30:06
-        .chat__message__text こんにちは
-      .chat__message
-        .chat__message__info
-          .chat__message__info__username 鈴木
-          .chat__message__info__date 2019/10/22(Tue) 21:30:06
-        .chat__message__text よろしくお願いします
+      = render partial: "message", collection: @messages
     .main-bottom
-      %form.chat-form
+      = form_for([@group, @message], html: {class: "chat-form"}) do |f|
         .chat-form__content
-          %input.chat-form__content__message{type: "text", placeholder: "type a message"}
-          %label.upload-label{for: "upload-icon"}
-            %i.fa.fa-picture-o
+          = f.text_field :content, class: "chat-form__content__message", placeholder: "type a message"
+          = f.label :image, class: "chat-form__content__img-upload" do
+            = fa_icon "picture-o"
+            = f.file_field :image, class: "chat-form__content__img-upload__input"
         %input.chat-form__btn-submit{type: "submit", value: "Send"}

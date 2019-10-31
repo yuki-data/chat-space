@@ -155,7 +155,7 @@
             height: 50px;
             @include reset_border_width;
           }
-          .upload-label {
+          &__img-upload {
             position: absolute;
             top: 0;
             right: 10px;
@@ -165,6 +165,9 @@
               &:hover {
                 cursor: pointer;
               }
+            }
+            &__input {
+              display: none;
             }
           }
         }
