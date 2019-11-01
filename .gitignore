@@ -154,3 +154,6 @@ yarn-debug.log*
 
 # 投稿された画像をリポジトリに含めない
 public/uploads/*
+
+# rspecでのテスト用の画像を含めない
+/spec/support/
