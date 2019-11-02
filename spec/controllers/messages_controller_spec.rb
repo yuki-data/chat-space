@@ -8,7 +8,7 @@ describe MessagesController do
     context "ログインしていない場合" do
       it "意図したビューにリダイレクトできているか" do
         get :index, params: {group_id: group.id}
-        expect(response).to redirect_to "http://test.host/users/sign_in"
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
