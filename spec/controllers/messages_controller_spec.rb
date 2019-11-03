@@ -58,19 +58,8 @@ describe MessagesController do
   describe "Post #create" do
     let(:user) { create(:user) }
     let(:group) { create(:group) }
-    let(:message) { build(:message) }
 
-    let(:params) {
-      {
-        group_id: group.id,
-        message: {
-          content: message.content,
-          image: message.image,
-          group_id: group.id,
-          user_id: user.id
-        }
-      }
-    }
+    let(:params) { { group_id: group.id, message: attributes_for(:message) } }
 
     subject do
       post :create, params: params
