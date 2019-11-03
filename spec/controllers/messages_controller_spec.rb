@@ -76,9 +76,7 @@ describe MessagesController do
         end
 
         it "投稿したメッセージがテーブルに保存されている" do
-          subject
-          message_from_table = Message.where(group_id: group.id, user_id: user.id).last
-          expect(message_from_table[:content]).to eq message[:content]
+          expect { subject }.to((change { Message.count }).by(1))
         end
       end
 
@@ -88,13 +86,11 @@ describe MessagesController do
         end
 
         it "indexテンプレートが描画される" do
-        expect(subject).to render_template :index
+          expect(subject).to render_template :index
         end
 
         it "テーブルにメッセージが保存されない" do
-          subject
-          message_from_table = Message.all
-          expect(message_from_table).to eq []
+          expect { subject }.not_to(change { Message.count })
         end
       end
     end
