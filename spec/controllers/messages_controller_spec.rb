@@ -54,4 +54,66 @@ describe MessagesController do
       end
     end
   end
+
+  describe "Post #create" do
+    let(:user) { create(:user) }
+    let(:group) { create(:group) }
+    let(:message) { build(:message) }
+
+    let(:params) {
+      {
+        group_id: group.id,
+        message: {
+          content: message.content,
+          image: message.image,
+          group_id: group.id,
+          user_id: user.id
+        }
+      }
+    }
+
+    subject do
+      post :create, params: params
+    end
+
+    context "ログインしている場合" do
+      before do
+        login user
+      end
+
+      context "メッセージがある場合" do
+        it "投稿したら#indexにリダイレクトする" do
+          expect(subject).to redirect_to group_messages_path(group.id)
+        end
+
+        it "投稿したメッセージがテーブルに保存されている" do
+          subject
+          message_from_table = Message.where(group_id: group.id, user_id: user.id).last
+          expect(message_from_table[:content]).to eq message[:content]
+        end
+      end
+
+      context "メッセージがない場合" do
+        before do
+          params[:message][:content] = ""
+        end
+
+        it "indexテンプレートが描画される" do
+        expect(subject).to render_template :index
+        end
+
+        it "テーブルにメッセージが保存されない" do
+          subject
+          message_from_table = Message.all
+          expect(message_from_table).to eq []
+        end
+      end
+    end
+
+    context "ログインしていない場合" do
+      it "ログイン画面にリダイレクトする" do
+        expect(subject).to redirect_to new_user_session_path
+      end
+    end
+  end
 end
