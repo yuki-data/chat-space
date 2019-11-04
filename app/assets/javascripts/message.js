@@ -35,6 +35,8 @@ $(function() {
         var html = buildHTML(data);
         var chat = $(".chat");
         chat.append(html);
+        $("#message_content").val("");
+        $("#message_image").val("");
       })
       .fail(function() {
         alert("メッセージ送信に失敗しました");
