@@ -37,6 +37,7 @@ $(function() {
         chat.append(html);
         $("#message_content").val("");
         $("#message_image").val("");
+        chat.animate({ scrollTop: chat[0].scrollHeight }, 100);
       })
       .fail(function() {
         alert("メッセージ送信に失敗しました");
