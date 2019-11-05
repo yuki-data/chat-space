@@ -155,3 +155,6 @@ yarn-debug.log*
 
 # 投稿された画像をリポジトリに含めない
 public/uploads/*
+
+# eslint設定ファイルを無視
+.eslintrc.json
