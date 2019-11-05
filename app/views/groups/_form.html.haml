@@ -24,6 +24,9 @@
       %label.chat-group-form__label チャットメンバー
     .chat-group-form__field--right
       .chat-group-users.js-add-user
+        .chat-group-user.js-chat-member{id: "chat-group-user-#{current_user.id}"}
+          %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
+          %p.chat-group-user__name= current_user.name
       / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときにも使用します
   .chat-group-form__field
     .chat-group-form__field--left
