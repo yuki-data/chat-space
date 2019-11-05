@@ -66,4 +66,12 @@ $(document).on("turbolinks:load", function() {
     this.parentElement.remove();
     appendMember(userId, userName);
   });
+
+  $(document).on("click", ".chat-group-user__btn--remove", function() {
+    console.log(this);
+    var userId = this.dataset.userId;
+    var userName = this.dataset.userName;
+    this.parentElement.remove();
+    appendUser({ user_name: userName, user_id: userId });
+  });
 });
