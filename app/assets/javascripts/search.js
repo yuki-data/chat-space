@@ -51,5 +51,6 @@ $(document).on("turbolinks:load", function() {
     console.log(this);
     var userId = this.dataset.userId;
     var userName = this.dataset.userName;
+    this.parentElement.remove();
   });
 });
