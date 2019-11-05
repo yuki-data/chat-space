@@ -1,6 +1,7 @@
 var $;
 $(document).on("turbolinks:load", function() {
   var searchResult = $("#user-search-result");
+  var chatMemberList = $(".chat-group-users");
 
   function appendUser(user) {
     var html = `
@@ -19,6 +20,17 @@ $(document).on("turbolinks:load", function() {
     </div>
     `;
     searchResult.append(html);
+  }
+
+  function appendMember(userId, userName) {
+    var html = `
+    <div class="chat-group-user js-chat-member" id="chat-group-user-${userId}" >
+      <input name="group[user_ids][]" type="hidden" value="${userId}" />
+      <p class="chat-group-user__name">${userName}</p>
+      <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" >削除</a >
+    </div>
+    `;
+    chatMemberList.append(html);
   }
 
   $("#user-search-field").on("input", function() {
@@ -52,5 +64,6 @@ $(document).on("turbolinks:load", function() {
     var userId = this.dataset.userId;
     var userName = this.dataset.userName;
     this.parentElement.remove();
+    appendMember(userId, userName);
   });
 });
