@@ -35,8 +35,7 @@ $(document).on("turbolinks:load", function() {
         var html = buildHTML(data);
         var chat = $(".chat");
         chat.append(html);
-        $("#message_content").val("");
-        $("#message_image").val("");
+        $("#new_message")[0].reset();
         chat.animate({ scrollTop: chat[0].scrollHeight }, 100);
       })
       .fail(function() {
