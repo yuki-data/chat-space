@@ -154,6 +154,7 @@
             width: 100%;
             height: 50px;
             @include reset_border_width;
+            outline: 0;
           }
           &__img-upload {
             position: absolute;
