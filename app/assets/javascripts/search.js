@@ -49,5 +49,7 @@ $(document).on("turbolinks:load", function() {
 
   $(document).on("click", ".chat-group-user__btn--add", function() {
     console.log(this);
+    var userId = this.dataset.userId;
+    var userName = this.dataset.userName;
   });
 });
