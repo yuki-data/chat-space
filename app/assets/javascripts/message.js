@@ -20,6 +20,7 @@ $(function() {
 
   $("#new_message").on("submit", function(e) {
     e.preventDefault();
+    $(this).prop("disabled", true);
     var formData = new FormData(this);
     var url = this.action;
     $.ajax({
@@ -31,7 +32,6 @@ $(function() {
       contentType: false
     })
       .done(function(data) {
-        console.log(data);
         var html = buildHTML(data);
         var chat = $(".chat");
         chat.append(html);
@@ -42,6 +42,5 @@ $(function() {
       .fail(function() {
         alert("メッセージ送信に失敗しました");
       });
-    return false;
   });
 });
