@@ -1,5 +1,5 @@
 var $;
-$(function() {
+$(document).on("turbolinks:load", function() {
   function buildHTML(message) {
     var image_tag = message.image_url
       ? `<img src="${message.image_url}" alt="${message.image_alt}">`
