@@ -46,4 +46,8 @@ $(document).on("turbolinks:load", function() {
         alert("ユーザー検索に失敗しました");
       });
   });
+
+  $(document).on("click", ".chat-group-user__btn--add", function() {
+    console.log(this);
+  });
 });
