@@ -38,12 +38,12 @@ $(document).on("turbolinks:load", function() {
             appendUser(user);
           });
         } else {
-          appendErrMsgToHTML("一致するユーザーがいません");
+          appendErrMsgToHTML("一致するユーザーが見つかりませんでした");
           console.log("一致なし");
         }
       })
       .fail(function() {
-        alert("error");
+        alert("ユーザー検索に失敗しました");
       });
   });
 });
