@@ -6,7 +6,6 @@ $(document).on("turbolinks:load", function() {
       : "";
 
     var html = `
-    <div class="chat__message">
     <div class="chat__message" data-message-id="${message.message_id}">
       <div class="chat__message__info">
         <div class="chat__message__info__username">${message.user_name}</div>
