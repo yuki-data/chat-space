@@ -18,31 +18,6 @@ $(document).on("turbolinks:load", function() {
     return html;
   }
 
-  $("#new_message").on("submit", function(e) {
-    e.preventDefault();
-    $(this).prop("disabled", true);
-    var formData = new FormData(this);
-    var url = this.action;
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: "json",
-      processData: false,
-      contentType: false
-    })
-      .done(function(data) {
-        var html = buildHTML(data);
-        var chat = $(".chat");
-        chat.append(html);
-        $("#new_message")[0].reset();
-        chat.animate({ scrollTop: chat[0].scrollHeight }, 100);
-      })
-      .fail(function() {
-        alert("メッセージ送信に失敗しました");
-      });
-  });
-
   function updateMessages() {
     var last_message = $(".chat__message").last();
     var latest_message_id = last_message.data("message-id");
@@ -69,6 +44,31 @@ $(document).on("turbolinks:load", function() {
         alert("データの取得に失敗しました");
       });
   }
+
+  $("#new_message").on("submit", function(e) {
+    e.preventDefault();
+    $(this).prop("disabled", true);
+    var formData = new FormData(this);
+    var url = this.action;
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: formData,
+      dataType: "json",
+      processData: false,
+      contentType: false
+    })
+      .done(function(data) {
+        var html = buildHTML(data);
+        var chat = $(".chat");
+        chat.append(html);
+        $("#new_message")[0].reset();
+        chat.animate({ scrollTop: chat[0].scrollHeight }, 100);
+      })
+      .fail(function() {
+        alert("メッセージ送信に失敗しました");
+      });
+  });
 
   setInterval(updateMessages, 5000);
 });
