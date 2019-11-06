@@ -43,7 +43,7 @@ $(document).on("turbolinks:load", function() {
       });
   });
 
-  $(".chat").on("click", function() {
+  function updateMessages() {
     var last_message = $(".chat__message").last();
     var latest_message_id = last_message.data("message-id");
     console.log(latest_message_id);
@@ -68,5 +68,7 @@ $(document).on("turbolinks:load", function() {
       .fail(function() {
         alert("データの取得に失敗しました");
       });
-  });
+  }
+
+  setInterval(updateMessages, 5000);
 });
