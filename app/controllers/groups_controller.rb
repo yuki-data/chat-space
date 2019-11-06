@@ -26,6 +26,8 @@ class GroupsController < ApplicationController
   def update
     @group.update(group_params)
     if @group.errors.empty?
+      @group.group_users.destroy_all
+      insert_group_users
       redirect_to root_path, notice: "グループを更新しました"
     else
       render :edit
