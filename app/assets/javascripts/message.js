@@ -57,6 +57,13 @@ $(document).on("turbolinks:load", function() {
     })
       .done(function(data) {
         console.log(data);
+        var chat = $(".chat");
+        if (data.length !== 0) {
+          data.forEach(function(message) {
+            var html = buildHTML(message);
+            chat.append(html);
+          });
+        }
       })
       .fail(function() {
         alert("データの取得に失敗しました");
