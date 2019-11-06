@@ -29,7 +29,6 @@ $(document).on("turbolinks:load", function() {
   function updateMessages() {
     var last_message = $(".chat__message").last();
     var latest_message_id = last_message.data("message-id");
-    console.log(latest_message_id);
     var url = location.pathname.replace("/messages", "/api/messages");
     $.ajax({
       type: "GET",
@@ -38,7 +37,6 @@ $(document).on("turbolinks:load", function() {
       dataType: "json"
     })
       .done(function(data) {
-        console.log(data);
         var chat = $(".chat");
         if (data.length !== 0) {
           data.forEach(function(message) {
