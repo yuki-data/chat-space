@@ -9,8 +9,8 @@ class User < ApplicationRecord
   has_many :groups, through: :group_users
   has_many :messages
 
-  def self.search(keyword)
+  def self.search(keyword, current_user_id)
     return nil if keyword.strip.empty?
-    User.where('name LIKE(?)', "%#{keyword}%")
+    User.where('name LIKE(?) and id != ?', "%#{keyword}%", current_user_id)
   end
 end
