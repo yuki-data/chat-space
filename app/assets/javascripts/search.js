@@ -35,7 +35,6 @@ $(document).on("turbolinks:load", function() {
 
   $("#user-search-field").on("input", function() {
     var input = this.value;
-    console.log(input);
     $.ajax({
       type: "GET",
       url: "/users",
@@ -43,7 +42,6 @@ $(document).on("turbolinks:load", function() {
       dataType: "json"
     })
       .done(function(data) {
-        console.log(data);
         $("#user-search-result").empty();
         if (data.length !== 0) {
           data.forEach(function(user) {
@@ -51,7 +49,6 @@ $(document).on("turbolinks:load", function() {
           });
         } else {
           appendErrMsgToHTML("一致するユーザーが見つかりませんでした");
-          console.log("一致なし");
         }
       })
       .fail(function() {
@@ -60,7 +57,6 @@ $(document).on("turbolinks:load", function() {
   });
 
   $(document).on("click", ".chat-group-user__btn--add", function() {
-    console.log(this);
     var userId = this.dataset.userId;
     var userName = this.dataset.userName;
     this.parentElement.remove();
@@ -68,7 +64,6 @@ $(document).on("turbolinks:load", function() {
   });
 
   $(document).on("click", ".chat-group-user__btn--remove", function() {
-    console.log(this);
     var userId = this.dataset.userId;
     var userName = this.dataset.userName;
     this.parentElement.remove();
