@@ -43,4 +43,23 @@ $(document).on("turbolinks:load", function() {
         alert("メッセージ送信に失敗しました");
       });
   });
+
+  $(".chat").on("click", function() {
+    var last_message = $(".chat__message").last();
+    var latest_message_id = last_message.data("message-id");
+    console.log(latest_message_id);
+    var url = location.pathname.replace("/messages", "/api/messages");
+    $.ajax({
+      type: "GET",
+      url: url,
+      data: { latest_message_id: latest_message_id },
+      dataType: "json"
+    })
+      .done(function(data) {
+        console.log(data);
+      })
+      .fail(function() {
+        alert("データの取得に失敗しました");
+      });
+  });
 });
