@@ -1,4 +1,4 @@
-.chat__message
+.chat__message{ data: { "message-id": message.id} }
   .chat__message__info
     .chat__message__info__username=message.user.name
     .chat__message__info__date=message.updated_at.strftime("%Y/%m/%d(%a) %H:%M")
