@@ -43,7 +43,7 @@
 
     .btn {
       margin-top: 20px;
-      color: #fff;
+      @include link_decoration_disabled(#fff);
       background-color: #ccc;
       font-size: 14px;
     }
