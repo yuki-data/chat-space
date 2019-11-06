@@ -63,6 +63,7 @@ $(document).on("turbolinks:load", function() {
             var html = buildHTML(message);
             chat.append(html);
           });
+          chat.animate({ scrollTop: chat[0].scrollHeight }, 100);
         }
       })
       .fail(function() {
