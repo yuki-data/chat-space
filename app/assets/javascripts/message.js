@@ -1,4 +1,5 @@
-var $;
+var $, chatUpdateScheduler;
+
 $(document).on("turbolinks:load", function() {
   function isChatUrl(pathname) {
     var urlPatternChatView = /\/groups\/\d+\/messages/;
@@ -77,5 +78,11 @@ $(document).on("turbolinks:load", function() {
       });
   });
 
-  setInterval(updateMessages, 5000);
+  if (chatUpdateScheduler) {
+    clearInterval(chatUpdateScheduler);
+  }
+
+  if (isChatUrl(location.pathname)) {
+    chatUpdateScheduler = setInterval(updateMessages, 5000);
+  }
 });
