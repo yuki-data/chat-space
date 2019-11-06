@@ -13,11 +13,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.create(group_params)
     if @group.errors.empty?
-      user_ids = params.require(:group)[:user_ids]
-      user_ids.each do |i|
-        GroupUser.create(group_id: @group.id, user_id: i.to_i) unless i.empty?
-      end
-
+      insert_group_users
       redirect_to root_path, notice: "グループを作成しました"
     else
       render :new
@@ -30,6 +26,8 @@ class GroupsController < ApplicationController
   def update
     @group.update(group_params)
     if @group.errors.empty?
+      @group.group_users.destroy_all
+      insert_group_users
       redirect_to root_path, notice: "グループを更新しました"
     else
       render :edit
@@ -44,5 +42,12 @@ class GroupsController < ApplicationController
 
   def set_group
     @group = Group.find(params[:id])
+  end
+
+  def insert_group_users
+    user_ids = params.require(:group)[:user_ids]
+    user_ids.each do |i|
+      GroupUser.create(group_id: @group.id, user_id: i.to_i) unless i.empty?
+    end
   end
 end
