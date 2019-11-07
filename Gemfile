@@ -63,6 +63,14 @@ group :production do
 end
 
 group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+end
+
+group :development, :test do
   # 以下はvscodeの拡張用
   gem "rubocop"
   gem "ruby-debug-ide"
