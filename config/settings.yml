@@ -1,0 +1,9 @@
+capistrano:
+  deploy_branch: "dev/ito/deploy"
+  aws_elastic_ip: "18.177.242.103"
+  aws_user_name: "ec2-user"
+  version_lock: "3.11.2"
+  application_name: "chat-space"
+  github_repo_url: "git@github.com:yuki-data/chat-space.git"
+  rbenv_ruby_version: "2.5.1"
+  path_to_ssh_key: "~/.ssh/yukidatachatspace.pem"
