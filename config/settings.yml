@@ -1,5 +1,4 @@
 capistrano:
-  deploy_branch: "dev/ito/deploy"
   aws_elastic_ip: "18.177.242.103"
   aws_user_name: "ec2-user"
   version_lock: "3.11.2"
