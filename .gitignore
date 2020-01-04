@@ -85,7 +85,8 @@ doc/
 ### Rails ###
 *.rbc
 capybara-*.html
-/log
+.rspec
+
 /tmp
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -155,4 +156,9 @@ yarn-debug.log*
 # 投稿された画像をリポジトリに含めない
 public/uploads/*
 
-# rspecでのテスト用の画像を含めない
+# eslint設定ファイルを無視
+.eslintrc.json
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

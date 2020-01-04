@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.search(params[:keyword], current_user.id)
+    respond_to do |form|
+      form.html
+      form.json
+    end
+  end
+
   def edit
   end
 
@@ -9,6 +17,8 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  private
 
   def user_params
     params.require(:user).permit(:name, :email)

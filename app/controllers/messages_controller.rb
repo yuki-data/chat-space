@@ -5,14 +5,23 @@ class MessagesController < ApplicationController
   end
 
   def create
-    message = Message.create(message_params)
-    if message.errors.empty?
-      redirect_to group_messages_path(params[:group_id]), notice: "メッセージを送信しました"
-    else
-      flash[:alert] = "メッセージを入力してください"
-      render :index
+    @new_message = Message.create(message_params)
+
+    respond_to do |format|
+      format.html do
+        if @new_message.errors.empty?
+          redirect_to group_messages_path(params[:group_id]), notice: "メッセージを送信しました"
+        else
+          flash[:alert] = "メッセージを入力してください"
+          render :index
+        end
+      end
+
+      format.json
     end
   end
+
+  private
 
   def message_params
     params.require(:message).permit(:content, :image).merge(group_id: params[:group_id], user_id: current_user.id)
