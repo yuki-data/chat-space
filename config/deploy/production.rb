@@ -60,4 +60,6 @@
 #     # password: "please use keys"
 #   }
 
-server '18.176.70.244', user: 'ec2-user', roles: %w{app db web}
+server Settings.capistrano.aws_elastic_ip, user: Settings.capistrano.aws_user_name, roles: %w{app db web}
+
+set :branch, Settings.capistrano.deploy_branch

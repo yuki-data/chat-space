@@ -159,5 +159,6 @@ public/uploads/*
 # eslint設定ファイルを無視
 .eslintrc.json
 
-# aws_access_key_idやaws_secret_access_keyを書くため
-config/secrets.yml
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
