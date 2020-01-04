@@ -43,6 +43,6 @@ require 'capistrano/rails/migrations'
 require 'capistrano3/unicorn'
 
 require 'config'
-Config.load_and_set_settings("config/settings.yml")
+Config.load_and_set_settings("config/settings.yml", "config/settings.local.yml")
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }

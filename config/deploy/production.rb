@@ -62,4 +62,4 @@
 
 server Settings.capistrano.aws_elastic_ip, user: Settings.capistrano.aws_user_name, roles: %w{app db web}
 
-set :branch, Settings.capistrano.deploy_branch
+set :branch, (Settings.capistrano.deploy_branch || "master")
