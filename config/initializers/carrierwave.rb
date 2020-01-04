@@ -14,7 +14,7 @@ CarrierWave.configure do |config|
       aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
       region: 'ap-northeast-1'
     }
-    config.fog_directory  = 'yukidata-chatspace'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/yukidata-chatspace'
+    config.fog_directory  = Settings.carrierwave.fog_directory
+    config.asset_host = Settings.carrierwave.asset_host
   end
 end
