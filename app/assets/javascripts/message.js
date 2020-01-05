@@ -65,11 +65,15 @@ $(document).on("turbolinks:load", function() {
       contentType: false
     })
       .done(function(data) {
-        var html = buildHTML(data);
-        var chat = $(".chat");
-        chat.append(html);
-        $("#new_message")[0].reset();
-        chat.animate({ scrollTop: chat[0].scrollHeight }, 100);
+        if (data.status == "success") {
+          var html = buildHTML(data);
+          var chat = $(".chat");
+          chat.append(html);
+          $("#new_message")[0].reset();
+          chat.animate({ scrollTop: chat[0].scrollHeight }, 100);
+        } else {
+          alert(data.error_message);
+        }
       })
       .fail(function() {
         alert("メッセージ送信に失敗しました");

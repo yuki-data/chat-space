@@ -17,7 +17,14 @@ class MessagesController < ApplicationController
         end
       end
 
-      format.json
+      format.json do
+        if @new_message.errors.empty?
+          @status = "success"
+        else
+          @status = "failed"
+          @error_message = @new_message.errors.full_messages.join("\n")
+        end
+      end
     end
   end
 
